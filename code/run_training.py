@@ -4,7 +4,7 @@
 #  File Name: run_training.py
 #  Author: Xu Zhang, Columbia University
 #  Creation Date: 09-07-2019
-#  Last Modified: Sun Sep 29 22:19:00 2019
+#  Last Modified: Tue Oct 15 16:27:57 2019
 #
 #  Usage: python run_training 
 #  Description: Train a GAN image detector
@@ -30,30 +30,25 @@ import argparse
 ####################################################################
 # Parse command line
 ####################################################################
-def usage():
-    print >> sys.stderr 
-    sys.exit(1)
+parser.add_argument('--dataset', type=str, default='CycleGAN', help='Training dataset select from: CycleGAN and AutoGAN')
+parser.add_argument('--feature', default='image', help='Feature used for training, choose from image and fft')
+parser.add_argument('--gpu-id', default='0', help='Feature used for training, choose from image and fft')
 
-class cd:
-    """Context manager for changing the current working directory"""
-    def __init__(self, newPath):
-        self.newPath = os.path.expanduser(newPath)
+args = parser.parse_args()
 
-    def __enter__(self):
-        self.savedPath = os.getcwd()
-        os.chdir(self.newPath)
-
-    def __exit__(self, etype, value, traceback):
-        os.chdir(self.savedPath)
-
-gpu_set = ['0','1']
+gpu_set = args.gpu_id.split(',')
+# add more gpu if wanted
+# gpu_set = ['0','1']
 
 #Compare image and spectrum
-parameter_set = [
-        #' --feature=image ',
-        ' --feature=fft '
-        ]
-
+if args.feature == 'image':
+    parameter_set = [
+            ' --feature=image ',
+            ]
+elif args.feature == 'fft':
+    parameter_set = [
+            ' --feature=fft '
+            ]
 #Compare different frequency band
 #parameter_set = [
 #        ' --feature=fft '
@@ -61,20 +56,21 @@ parameter_set = [
 #        ' --feature=fft --mode=2'
 #        ' --feature=fft --mode=3'
 #        ]
+else:
+    print('Not a valid feature!')
+    exit(-1)
+
+
 number_gpu = len(gpu_set)
 
-#datasets = [ 'horse ', 'horse_auto ', 'summer', 'summer_auto ']
-#datasets = [ 'horse ', 'zebra ', 'summer ', 'winter ', 'horse_auto ', 'zebra_auto ', 'summer_auto ', 'winter_auto ']
-#datasets = ['horse ', 'zebra ', 'summer ', 'winter ', 'apple', 'orange', 'facades', 'cityscapes', 'satellite', 'ukiyoe', 'vangogh', 'cezanne', 'monet', 'photo']
-datasets = [ 'horse_auto', 'zebra_auto', 'summer_auto', 'winter_auto', 'apple_auto', 'orange_auto', 'facades_auto', 'cityscapes_auto', 'satellite_auto',  'ukiyoe_auto', 'vangogh_auto', 'cezanne_auto', 'monet_auto', 'photo_auto', 'horse ', 'zebra ', 'summer ', 'winter ', 'apple', 'orange', 'facades', 'cityscapes', 'satellite', 'ukiyoe', 'vangogh', 'cezanne', 'monet', 'photo']
+if args.dataset == 'CycleGAN':
+    datasets = ['horse', 'zebra', 'summer', 'winter', 'apple', 'orange',  'facades', 'cityscapes', 'satellite', 'ukiyoe', 'vangogh', 'cezanne', 'monet', 'photo']
+elif args.dataset == 'AutoGAN':
+    datasets = ['horse_auto', 'zebra_auto', 'summer_auto', 'winter_auto', 'apple_auto', 'orange_auto', 'facades_auto', 'cityscapes_auto', 'satellite_auto', 'ukiyoe_auto', 'vangogh_auto', 'cezanne_auto', 'monet_auto', 'photo_auto']
+else:
+    print('Not a valid dataset!')
+    exit(-1)
 
-#datasets = ['horse ', 'summer ']
-#datasets = ['horse+zebra --leave_one_out ', 'apple+orange --leave_one_out ',
-#            'summer+winter --leave_one_out ', 'cityscapes --leave_one_out ', 
-#            'satellite --leave_one_out ', 'facades --leave_one_out ', 
-#            'fold6 --leave_one_out ', 'fold7 --leave_one_out ',
-#            'fold8 --leave_one_out ', 'fold9 --leave_one_out ']
-#datasets = ['horse+zebra --leave_one_out ']
 process_set = []
 
 index = 0

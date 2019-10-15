@@ -4,7 +4,7 @@
 #  File Name: GAN_Detection_Train.py
 #  Author: Xu Zhang, Columbia University
 #  Creation Date: 09-07-2019
-#  Last Modified: Thu Sep 19 18:13:12 2019
+#  Last Modified: Tue Oct 15 16:41:30 2019
 #
 #  Usage: python GAN_Detection_Test.py -h
 #  Description: Evaluate a GAN image detector
@@ -61,7 +61,7 @@ parser.add_argument('--resize_size', type=str, default='200',
                     help='Test with different resize sizes, only effective when use resize for test set.')
 
 parser.add_argument('--result-dir', default='./final_output/',
-                    help='folder to output log')
+                    help='folder to output result in csv')
 parser.add_argument('--model-dir', default='./model/',
                     help='folder to output model checkpoints')
 parser.add_argument('--model', default='resnet',
