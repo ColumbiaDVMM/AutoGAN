@@ -7,6 +7,7 @@ To address this, we propose a GAN simulator, AutoGAN, which can simulate the art
 
 <p align="center">
   <img src="./fig/AutoGAN.png" width="500">
+  
   AutoGAN Pipeline
 </p>
 
@@ -15,6 +16,7 @@ To address this, we propose a GAN simulator, AutoGAN, which can simulate the art
 Additionally, we identify a unique artifact caused by the up-sampling component included in the common GAN pipeline. We show theoretically such artifacts are manifested as replications of spectra in the frequency domain and thus propose a classifier model based on the spectrum input, rather than the pixel input. 
 <p align="center">
   <img src="./fig/checkerboard.png" width="500">
+  
   Upsampling artifacts in StarGAN image
 </p>
 
@@ -22,6 +24,7 @@ By using the simulated images to train a spectrum based classifier, even without
 
 <p align="center">
   <img src="./fig/AutoGAN_Image.png" width="500">
+  
   Upsampling artifacts in AutoGAN image
 </p>
 
