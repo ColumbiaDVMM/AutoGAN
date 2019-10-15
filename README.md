@@ -50,8 +50,6 @@ git clone --recursive git@github.com:ColumbiaDVMM/AutoGAN.git
 
 My current conda environment is attached as [AutoGAN.yml](conda/AutoGAN.yml)
 
-Download object detection model and flag recognition model from [Google Drive](https://drive.google.com/open?id=1kvpB2NtVfI0urb7-66MnMRHVNgXMHIgQ) and unzip to ./data/model/
-
 ## Data Preparation
 Download cycleGAN image data. 
 
@@ -87,7 +85,7 @@ python run_training.py
 ```
 To train cityscapes and maps models, change make trainB directory under datasets/cityscapes or datasets/maps with any jpg images. Remove it once training is done. Once training is done, change all the autogan models' name in ./autogan/checkpoints/{category}\_auto/latest\_net\_G\_A.pth to ./autogan/checkpoints/{category}\_auto/latest\_net\_G.pth
 
-Pretrained model can be downloaded from [Google Drive](https://drive.google.com/open?id=1kvpB2NtVfI0urb7-66MnMRHVNgXMHIgQ). Unzip to ./checkpoints/
+Pretrained model can be downloaded from [Google Drive](https://drive.google.com/open?id=1kvpB2NtVfI0urb7-66MnMRHVNgXMHIgQ). Unzip to ./autogan/checkpoints/
 
 Run autoGAN to get all autoGAN synthesized images.
 
