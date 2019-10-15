@@ -85,7 +85,7 @@ python run_training.py
 ```
 To train cityscapes and maps models, change make trainB directory under datasets/cityscapes or datasets/maps with any jpg images. Remove it once training is done. Once training is done, change all the autogan models' name in ./autogan/checkpoints/{category}\_auto/latest\_net\_G\_A.pth to ./autogan/checkpoints/{category}\_auto/latest\_net\_G.pth
 
-Pretrained model can be downloaded from [Google Drive](https://drive.google.com/open?id=1kvpB2NtVfI0urb7-66MnMRHVNgXMHIgQ). Unzip to ./autogan/checkpoints/
+Pretrained model can be downloaded from [Google Drive](https://drive.google.com/open?id=1IZZ5QCLbzAmrPDHh7EdOigPCdz46zPc6). Unzip to ./autogan/checkpoints/
 
 Run autoGAN to get all autoGAN synthesized images.
 
@@ -137,7 +137,8 @@ python run_test.py --dataset=CycleGAN --feature=fft ```
   - `--dataset`: Training dataset, choose from CycleGAN or AutoGAN.
   
   - `--feature`: choose from image and fft for image feature or spectrum feature
-  
+```
+
 Code create 1 directories
 
 - `./final_output/`: directory for the test results (csv file).
