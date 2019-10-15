@@ -33,7 +33,7 @@ import cv2
 
 class cycleGAN_dataset(data.Dataset):
     def __init__(self, root, name, train=True, leave_one_out = False, transform=None, check_cached=False):
-        self.image_dir = '/home/xuzhang/project/Medifor/data/cycleGAN/' 
+        self.image_dir = './data/' 
         self.root = os.path.expanduser(root)
         self.name = name
         self.data_dir = os.path.join(self.image_dir, name)
