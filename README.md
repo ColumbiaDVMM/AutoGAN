@@ -28,7 +28,7 @@ By using the simulated images to train a spectrum based classifier, even without
 This code is the training and evaluation code for our WIFS 2019 paper ([arxiv](https://arxiv.org/abs/1708.06320)).
 
 @inproceedings{zhang2019detecting,<br />
-  title={Learning Spread-out Local Feature Descriptors},<br />
+  title={Detecting and Simulating Artifacts in GAN Fake Images},<br />
   author={Zhang, Xu and Karaman, Svebor and Chang, Shih-Fu},<br />
   booktitle={WIFS},<br />
   year={2019}<br />
