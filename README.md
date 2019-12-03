@@ -31,7 +31,7 @@ By using the simulated images to train a spectrum based classifier, even without
   Upsampling artifacts in AutoGAN image
 </p>
 
-This code is the training and evaluation code for our WIFS 2019 paper ([arxiv](https://arxiv.org/abs/1708.06320)).
+This code is the training and evaluation code for our WIFS 2019 paper ([arxiv](https://arxiv.org/pdf/1907.06515v2.pdf)).
 
 @inproceedings{zhang2019detecting,<br />
   title={Detecting and Simulating Artifacts in GAN Fake Images},<br />
