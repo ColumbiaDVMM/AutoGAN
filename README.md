@@ -45,7 +45,7 @@ This code is the training and evaluation code for our WIFS 2019 paper ([arxiv](h
 Make a full clone to make sure cloning all the submodules.
 
 ```bash
-git clone --recursive git@github.com:ColumbiaDVMM/AutoGAN.git
+git clone --recursive https://github.com/ColumbiaDVMM/AutoGAN.git
 ```
 
 My current conda environment is attached as [AutoGAN.yml](conda/AutoGAN.yml)
