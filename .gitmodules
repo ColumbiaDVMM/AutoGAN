@@ -1,4 +1,4 @@
 [submodule "pytorch-CycleGAN-and-pix2pix"]
-	path = pytorch-CycleGAN-and-pix2pix
+	path = autogan
     url = https://github.com/spongezhang/pytorch-CycleGAN-and-pix2pix.git
     branch = auto_gan
