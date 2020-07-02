@@ -59,12 +59,12 @@ cd autogan
 python datasets/prepare_data.py
 ```
 
-Download cycleGAN model.
+Download cycleGAN model using the script from cycleGAN [download_cyclegan_model.sh](https://github.com/spongezhang/pytorch-CycleGAN-and-pix2pix/blob/5edd6df122e637182cf784246bc410a151df1179/scripts/download_cyclegan_model.sh).
  
 ```bash
 # From project directory
 cd autogan
-python scripts/prepare_model.py
+./scripts/download_cyclegan_model.sh ***
 ```
 
 Run cycleGAN to get all cycleGAN synthesized images.
